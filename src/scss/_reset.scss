@@ -1,0 +1,30 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+  padding: 0;
+}
+
+a {
+  background: transparent;
+  &:active,
+  &:hover {
+    outline: 0;
+  }
+}
+
+input,
+textarea {
+  box-shadow: none;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  outline: none;
+}
+
+ul,
+li {
+  list-style-position: inside;
+}

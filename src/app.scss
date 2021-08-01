@@ -1,0 +1,10 @@
+@import './scss/colors';
+@import './scss/htmlbodyroot';
+@import './scss/reset';
+
+.app {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
