@@ -5,6 +5,7 @@ module.exports = {
         backgroundPage: path.join(__dirname, "src/backgroundPage.ts"),
         app: path.join(__dirname, "src/app.tsx"),
     },
+    
     output: {
         path: path.join(__dirname, "dist/js"),
         filename: "[name].js",
