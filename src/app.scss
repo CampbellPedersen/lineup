@@ -1,10 +1,8 @@
 @import './scss/colors';
 @import './scss/htmlbodyroot';
 @import './scss/reset';
+@import './scss/typography';
 
 .app {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
+  background-color: $base-9;
 }

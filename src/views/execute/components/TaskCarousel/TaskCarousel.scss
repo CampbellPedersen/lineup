@@ -1,0 +1,61 @@
+@import './../../../../app.scss';
+
+$carousel-border-radius: 10px;
+$carousel-padding: 10px;
+
+$item-width: 250px;
+$item-padding: 10px;
+$item-border-radius: 5px;
+
+.task-carousel {
+  overflow: hidden;
+
+  width: $item-width;
+  border-radius: $carousel-border-radius;
+
+  .content {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    overflow: hidden;
+    position: relative;
+
+    .item {
+      background: $base-8;
+      color: $base-1;
+
+      width: 100%;
+      border-radius: $item-border-radius;
+      margin: $carousel-padding;
+      padding: $item-padding;
+      padding-left: $item-padding + $item-border-radius;
+      padding-bottom: $item-padding * 4;
+
+      cursor: pointer;
+
+      // Left border
+      position: relative;
+      overflow: hidden;
+      padding-left: $item-border-radius * 2;
+      &:before {
+        background: $primary-6;
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: $item-border-radius;
+      }
+
+      .name {
+        font-weight: 500;
+        font-size: $font-size-lg
+      }
+
+      .instructions {
+        font-weight: 300;
+        font-size: $font-size-md
+      }
+    }
+  }
+};

@@ -1,13 +1,6 @@
 @import './colors';
 
 html, body {
-  min-width: 300px;
-  min-height: 120px;
-  background: $base-color;
-  color: $grey-1;
+  color: $base-1;
   font-family: 'Roboto', sans-serif;
-}
-
-#root {
-  height: 100vh;
 }
