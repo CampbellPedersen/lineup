@@ -1,0 +1,10 @@
+@import '../../../../app.scss';
+
+.lineup-card {
+  padding: 10px;
+
+  .name {
+    font-size: $font-size-xl;
+    font-weight: 500;
+  }
+}

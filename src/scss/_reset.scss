@@ -38,3 +38,10 @@ ul,
 li {
   list-style-position: inside;
 }
+
+svg text {
+  user-select: none;
+}
+svg text::selection {
+    background: none;
+}

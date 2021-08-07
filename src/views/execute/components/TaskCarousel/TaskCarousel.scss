@@ -1,17 +1,14 @@
 @import './../../../../app.scss';
 
-$carousel-border-radius: 10px;
 $carousel-padding: 10px;
 
 $item-width: 250px;
 $item-padding: 10px;
-$item-border-radius: 5px;
+$item-border-radius: .3rem;
 
 .task-carousel {
   overflow: hidden;
-
   width: $item-width;
-  border-radius: $carousel-border-radius;
 
   .content {
     display: flex;
@@ -20,31 +17,42 @@ $item-border-radius: 5px;
     overflow: hidden;
     position: relative;
 
-    .item {
-      background: $base-8;
-      color: $base-1;
-
+    .task-item,
+    .completed-item {
       width: 100%;
       border-radius: $item-border-radius;
       margin: $carousel-padding;
       padding: $item-padding;
-      padding-left: $item-padding + $item-border-radius;
+      @include box-shadow(2px, 6px, 4px, 0px, $base-9);
+      user-select: none;
+    }
+
+    .task-item {
+      background: $base-7;
+      color: $base-1;
       padding-bottom: $item-padding * 4;
 
+      // Hover effects
       cursor: pointer;
+      transition: transform .1s ease-out;
+      &:hover {
+        transform: scale(1.025);
+        filter: brightness(0.95);
+      }
 
+            
       // Left border
       position: relative;
       overflow: hidden;
       padding-left: $item-border-radius * 2;
       &:before {
-        background: $primary-6;
-        content: '';
         position: absolute;
         top: 0;
         left: 0;
         height: 100%;
         width: $item-border-radius;
+        background: $primary-6;
+        content: '';
       }
 
       .name {
@@ -54,8 +62,19 @@ $item-border-radius: 5px;
 
       .instructions {
         font-weight: 300;
-        font-size: $font-size-md
+        font-size: $font-size-md;
+        color: $base-4;
       }
+    }
+
+    .completed-item {
+      @include gradient($primary-6, $primary-9);
+      color: $base-1;
+
+      padding-bottom: $item-padding * 3;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
   }
 };

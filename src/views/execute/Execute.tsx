@@ -4,6 +4,7 @@ import { Lineup, Task } from "@src/models/task";
 import { TaskCarousel } from "./components/TaskCarousel";
 import { ExecuteHeader } from "./components/ExecuteHeader";
 import "./Execute.scss";
+import { LineupCard } from "./components/LineupCard/LineupCard";
 
 // Comes from store probably?
 const tasks: Task[] = [
@@ -31,10 +32,12 @@ const lineup: Lineup = {
 
 export const Execute: React.FC = () => {
   return (
-    <div className="execute">
+    <div>
       <ExecuteHeader />
-      <section>
-        <TaskCarousel tasks={lineup.tasks} />
+      <section className="execute">
+        <LineupCard lineup={lineup}>
+          <TaskCarousel tasks={lineup.tasks} />
+        </LineupCard>
       </section>
     </div>
   );

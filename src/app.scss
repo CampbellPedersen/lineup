@@ -2,9 +2,9 @@
 @import './scss/htmlbodyroot';
 @import './scss/reset';
 @import './scss/typography';
+@import './scss/mixins';
 
 .app {
   background-color: $base-8;
-  height: 350px;
   width: 300px;
 }
