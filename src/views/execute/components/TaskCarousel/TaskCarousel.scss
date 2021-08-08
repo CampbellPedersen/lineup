@@ -4,7 +4,7 @@ $carousel-padding: 10px;
 
 $item-width: 250px;
 $item-padding: 10px;
-$item-border-radius: .3rem;
+$item-border-radius: 5px;
 
 .task-carousel {
   overflow: hidden;
@@ -40,11 +40,10 @@ $item-border-radius: .3rem;
         filter: brightness(0.95);
       }
 
-            
       // Left border
       position: relative;
       overflow: hidden;
-      padding-left: $item-border-radius * 2;
+      padding-left: $item-border-radius + $item-padding;
       &:before {
         position: absolute;
         top: 0;
@@ -70,6 +69,8 @@ $item-border-radius: .3rem;
     .completed-item {
       @include gradient($primary-6, $primary-9);
       color: $base-1;
+      font-weight: 500;
+      font-size: $font-size-xl;
 
       padding-bottom: $item-padding * 3;
       display: flex;

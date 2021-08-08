@@ -1,20 +1,20 @@
 import React from "react";
-import { Header } from "@src/components/Header/Header";
-import { ContentButton } from "@src/components/ImageButton";
-import "./EditHeader.scss";
+import { Header as BaseHeader } from "@src/components/Header/Header";
+import { ContentButton } from "@src/components/ContentButton";
 import { BackIcon } from "@src/components/Icons/BackIcon";
+import "./Header.scss";
 
 type Props = {
   onBack: () => void;
 };
 
-export const EditHeader: React.FC<Props> = ({ onBack }) => (
-  <Header>
+export const Header: React.FC<Props> = ({ onBack }) => (
+  <BaseHeader>
     <nav className="edit-header">
       <ContentButton className="back-button" onClick={onBack}>
         <BackIcon height={26} width={26} />
       </ContentButton>
-      <span className="heading">Edit Lineups</span>
+      <span>Edit Lineups</span>
     </nav>
-  </Header>
+  </BaseHeader>
 );
