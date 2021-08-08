@@ -1,12 +1,31 @@
-import * as React from "react";
-import * as ReactDOM from "react-dom";
+import React from "react";
+import ReactDOM from "react-dom";
+import {
+  MemoryRouter as Router,
+  Switch,
+  Route,
+  Redirect,
+} from "react-router-dom";
 import { browser } from "webextension-polyfill-ts";
-import { Execute } from "./views/execute";
+import { Routes } from "./routes";
 import "./app.scss";
 
 export const App: React.FC = () => (
   <div className="app">
-    <Execute />
+    <Router>
+      <Switch>
+        {Object.values(Routes).map((route) => (
+          <Route
+            key={route.path}
+            path={route.path}
+            component={route.component}
+          />
+        ))}
+        <Route>
+          <Redirect to="/execute" />
+        </Route>
+      </Switch>
+    </Router>
   </div>
 );
 

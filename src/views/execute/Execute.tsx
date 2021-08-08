@@ -5,6 +5,7 @@ import { TaskCarousel } from "./components/TaskCarousel";
 import { ExecuteHeader } from "./components/ExecuteHeader";
 import "./Execute.scss";
 import { LineupCard } from "./components/LineupCard/LineupCard";
+import { useRouting } from "@src/routes";
 
 // Comes from store probably?
 const tasks: Task[] = [
@@ -31,9 +32,10 @@ const lineup: Lineup = {
 };
 
 export const Execute: React.FC = () => {
+  const routing = useRouting();
   return (
     <div>
-      <ExecuteHeader />
+      <ExecuteHeader onEdit={routing.goToEdit} />
       <section className="execute">
         <LineupCard lineup={lineup}>
           <TaskCarousel tasks={lineup.tasks} />

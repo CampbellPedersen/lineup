@@ -1,13 +1,13 @@
 import clsx from "clsx";
 import React from "react";
-import "./CircleButton.scss";
+import "./ContentButton.scss";
 
 type Props = {
   className?: string;
   onClick: () => void;
 };
 
-export const CircleButton: React.FC<Props> = ({
+export const ContentButton: React.FC<Props> = ({
   className,
   onClick,
   children,
